@@ -1,0 +1,12 @@
+*.py -> fayl
+modul -> modul
+kutubxona -> modullad to'plami
+framework -> kutubxonalar to'plami
+
+Django -> web framework
+Django REST Framework
+
+RE - Representational
+S  - State
+T  - Transfer
+

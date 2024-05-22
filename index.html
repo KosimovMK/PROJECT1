@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes app</title>
+</head>
+<body>
+    
+    <div id="notes">
+        
+        
+        
+    </div>
+
+    <script>
+        const notesContainer = document.getElementById('notes');
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            const notes = await fetch('http://127.0.0.1:8000/api/notes/')
+            const data = await notes.json()
+            
+            data.forEach(note => {
+                const noteObject = `
+                    <div id="note">
+                        <h1>ID: ${note.id}</h1>
+                        <h2>Title: ${note.title}</h2>
+                        <p>Body: ${note.body}</p>
+                    </div
+                `;
+                notesContainer.innerHTML += noteObject;
+            });
+
+        })
+        
+    </script>
+
+</body>
+</html>
